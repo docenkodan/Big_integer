@@ -8,20 +8,16 @@
 #include <cstdint>
 
 class big_integer {
-	// основание системы счисления (1 000 000 000)
 	static const int BASE = 1'000'000'000;
 
-	// внутреннее хранилище числа
 	std::vector<int> _digits;
 
-	// знак числа
 	bool _is_negative;
 
 	void _remove_leading_zeros();
 	void _shift_right();
 
 public:
-	// класс-исключение, бросаемое при делении на ноль
 	class divide_by_zero: public std::exception {
 	};
 
